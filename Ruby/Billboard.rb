@@ -1,12 +1,16 @@
-def billboard(name, price)
-    if price == nil || price.empty then
-        price = 30
+def billboard(name, price = 0)
+    cost = 0
+    if price == 0 then
+        cost += 30
+    else 
+        cost += price
     end
-    cost = price 
     p cost
+    total = 0
     x = name.split("")
-    print x.length * cost
+    x.length.times{total += cost}
+    return total
     
   end
 
-  billboard("Jeong-Ho Aristotelis")
+  billboard("Jeong-Ho Aristotelis", 10)
